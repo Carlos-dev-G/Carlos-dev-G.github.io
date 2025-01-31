@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interfaz de chat estilo terminal">
-    <link rel="stylesheet" href="src/reset.css">
-    <link rel="stylesheet" href="src/index.css">
-    <script src="src/lib/Umbrella.js"></script>
-    <title>BAA4TS Terminal Chat</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consola Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="src/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="src/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
 </head>
+
 <body>
-    <main class="container">
-        <section class="chat-container">
-            <div class="chat-output" id="chatOutput" aria-live="polite">
-                <ul id="console">
-                    <!-- Los mensajes se agregarán aquí -->
-                </ul>
-            </div>
-            <div class="input-container">
-                <input type="text" id="userInput" class="user-input" autocomplete="off" placeholder="@> input">
-                <button type="button" class="send-button" aria-label="Enviar mensaje">Enviar</button>
-            </div>
-        </section>
-    </main>
+    <nav>
+        <span class="time">TIME</span>
+    </nav>
+    <section class="console">
+        <div id="console-panel" class="console-panel">
+            <ul id="console"></ul>
+        </div>
+        <div class="console-user">
+            <span>$</span>
+            <input class="user-input" type="text">
+        </div>
+    </section>
+    <section class="footer">
+        <p>help commando is: help</p>
+        <p>build by: Carlos-dev-G or baa4ts</p>
+    </section>
 </body>
 <script src="src/index.js"></script>
+
 </html>
