@@ -1,0 +1,234 @@
+:root {
+    --primary-accent: #f4338b;
+    --background-color: #030203;
+    --text-color: #f0f309;
+    --secondary-accent: #f14552;
+    --font-main: 'Xanmono', monospace;
+}
+
+@font-face {
+    font-family: 'Xanmono';
+    src: url('font/Xanmono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.chat-container {
+    width: min(90%, 800px);
+    border-left: 2px solid var(--primary-accent);
+    padding: 1.5rem;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-output {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 1rem;
+    background-color: rgba(240, 243, 9, 0.05);
+    border: 1px solid var(--secondary-accent);
+    border-radius: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-accent) transparent;
+}
+
+.chat-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-output::-webkit-scrollbar-thumb {
+    background-color: var(--primary-accent);
+    border-radius: 3px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    flex-wrap: nowrap;
+}
+
+.user-input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.25rem;
+    min-height: 32px;
+}
+
+.user-input:focus {
+    outline: 1px dashed var(--primary-accent);
+    outline-offset: 2px;
+}
+
+.input-prompt {
+    color: var(--secondary-accent);
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.send-button {
+    background-color: var(--secondary-accent);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+    flex-shrink: 0;
+}
+
+.send-button:hover {
+    background-color: #d12d3d;
+}
+
+.send-button:focus {
+    outline: 1px dashed var(--primary-accent);
+    outline-offset: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .chat-container {
+        height: 85vh;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .chat-container {
+        width: 95%;
+        height: 90vh;
+        padding: 1rem;
+        border-left-width: 1px;
+    }
+
+    .input-container {
+        gap: 0.3rem;
+        padding: 0.3rem;
+    }
+
+    .send-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .user-input {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        height: 95vh;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .input-container {
+        flex-wrap: wrap;
+    }
+
+    .input-prompt {
+        flex: 0 0 100%;
+        font-size: 0.8rem;
+    }
+
+    .user-input {
+        min-width: 0;
+        flex: 1 1 60%;
+    }
+
+    .send-button {
+        flex: 1 1 30%;
+        white-space: nowrap;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .chat-output {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .input-container {
+        gap: 0.2rem;
+    }
+
+    .send-button {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+
+    .user-input {
+        font-size: 0.85rem;
+    }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+    .send-button {
+        min-height: 44px;
+        padding: 1rem;
+    }
+
+    .user-input {
+        min-height: 44px;
+        font-size: 1rem;
+    }
+
+    .chat-output {
+        scrollbar-width: none;
+    }
+
+    .chat-output::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+ul li {
+    border: none;
+    background: none;
+    list-style-type: none;
+    padding: 0;
+}
