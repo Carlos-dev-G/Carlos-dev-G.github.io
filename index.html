@@ -1,56 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" dir="ltr">
 <head>
     <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>B4</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='src/css/reset.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='src/css/main.css'>
+    <title>Carlos Dev | Portfolio</title>
+    <meta name="description" content="Portfolio de Carlos Dev - Desarrollador Web">
+    <link rel='stylesheet' href='src/css/main.css'>
+    <script src="src/js/umbrella.js"></script>
+    <script src="/src/js/sweetalert2.js"></script>
 </head>
 
 <body>
-    <section class="hero">
-        <div class="hero-img">
-            <img id="hero-img-perfil" src="https://i.pinimg.com/736x/2b/3f/97/2b3f97b0c42f851ac815b9819a5db8ab.jpg"
-                alt="">
+    <header class="hero">
+        <div class="hero__image-container">
+            <img class="hero__profile-image" 
+                 src="https://i.pinimg.com/736x/2b/3f/97/2b3f97b0c42f851ac815b9819a5db8ab.jpg"
+                 alt="Carlos Dev - Imagen de perfil con un gato usando bandana">
         </div>
-        <div class="hero-text">
-            <h1 id="hero-img-title">Carlos-dev-G</h1>
-            <span class="hero-text-con">
-                <hr>
+        <div class="hero__content">
+            <h1 class="hero__title">Carlos-dev-G</h1>
+            <div class="hero__description">
                 <p>Hola, soy Carlos (o Baa4ts). Soy programador y trabajo con Python, Django, PHP y desarrollo web
                     (HTML, CSS, JS). Me gusta mantener las cosas simples. Mis intereses incluyen C++ (autodidacta) y
-                    Umbrella.js. </p>
-            </span>
+                    Umbrella.js.</p>
+            </div>
         </div>
-    </section>
-    <section class="cosa">
-        <h1 id="hero-img-title">my skills</h1>
-        <section class="sections-skill">
-            <div class="card">
-                <h1 id="color-a">Academia (Ude/Ceibal)</h1>
-                <ul>
-                    <li>* Python</li>
-                    <li>* Django</li>
-                    <li>* PHP</li>
-                    <li>* Web (Html, Css, Js)</li>
-                    <li>* Cyberseguridad (Cisco)</li>
-                    <li>* Habilidades Digitales para la Empleabilidad (INEFOP)</li>
-                    <li>* Introduction Windows Malware Development (por curiosidad in:darkdev)</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h1 id="color-a">Autodidacta</h1>
-                <ul>
-                    <li>* C++</li>
-                    <li>* Umbrella.js</li>
-                </ul>
-            </div>
-        </section>
-    </section>
-</body>
-<script src='src/js/main.js'></script>
+    </header>
 
+    <main class="skills-section">
+        <h2 class="skills__heading">Mis habilidades</h2>
+        <div class="skills__grid">
+            <article class="skill-card">
+                <h3 class="skill-card__title">Academia (Ude/Ceibal)</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>PHP</li>
+                    <li>Web (HTML, CSS, JS)</li>
+                    <li>Cyberseguridad (Cisco)</li>
+                    <li>Habilidades Digitales para la Empleabilidad (INEFOP)</li>
+                    <li>Introduction Windows Malware Development (por curiosidad in:darkdev)</li>
+                </ul>
+            </article>
+
+            <article class="skill-card">
+                <h3 class="skill-card__title">Autodidacta</h3>
+                <ul class="skill-list">
+                    <li>C++</li>
+                    <li>Umbrella.js</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <button type="button" id="btn-contacto" class="contact-button">Contacto</button>
+    </footer>
+
+    <script src='src/js/main.js'></script>
+</body>
 </html>
