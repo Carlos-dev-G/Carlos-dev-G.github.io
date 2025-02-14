@@ -1,12 +1,29 @@
-// Asegúrate de que el DOM esté completamente cargado antes de ejecutar el script
-document.addEventListener("DOMContentLoaded", function() {
-    const contactBtn = document.getElementById('btn-contacto');
+u(document).on('DOMContentLoaded', function () {
+    const IcoPerf = u("#hero__profile-image");
+    let contador = 1;
+
+    function cambiarImagen() {
+        IcoPerf.addClass('fade-out');
+
+        setTimeout(() => {
+            contador = contador === 8 ? 1 : contador + 1;
+            IcoPerf.attr('src', `/my_cat/${contador}.jpg`);
+            setTimeout(() => {
+                IcoPerf.removeClass('fade-out').addClass('fade-in');
+            }, 200);
+            setTimeout(() => {
+                IcoPerf.removeClass('fade-in');
+            }, 1500);
+        }, 1200);
+    }
+
+    setInterval(cambiarImagen, 4500);
+
+    const contactBtn = u('#btn-contacto');
     const email = 'baa4tsdev@gmail.com';
 
-    // Verifica que el botón de contacto exista
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function() {
-            // Muestra el cuadro de alerta con el correo electrónico
+    if (contactBtn.length) {
+        contactBtn.on('click', function () {
             Swal.fire({
                 title: 'Contacto',
                 html: `Email: <a href="mailto:${email}">${email}</a>`,
@@ -21,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Intentar copiar al portapapeles
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText(email)
                             .then(() => {
