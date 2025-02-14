@@ -6,7 +6,7 @@ u(document).on('DOMContentLoaded', function () {
         IcoPerf.addClass('fade-out');
 
         setTimeout(() => {
-            contador = contador === 8 ? 1 : contador + 1;
+            contador = contador === 11 ? 1 : contador + 1;
             IcoPerf.attr('src', `/my_cat/${contador}.jpg`);
             setTimeout(() => {
                 IcoPerf.removeClass('fade-out').addClass('fade-in');
